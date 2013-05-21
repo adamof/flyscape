@@ -1,4 +1,3 @@
-$ar_databases = ['activerecord_unittest', 'activerecord_unittest2']
 $as_vagrant   = 'sudo -u vagrant -H bash -l -c'
 $home         = '/home/vagrant'
 
@@ -34,21 +33,32 @@ class install_postgres {
 
   class { 'postgresql::server': }
 
-  pg_database { $ar_databases:
-    ensure   => present,
-    encoding => 'UTF8',
-    require  => Class['postgresql::server']
-  }
-
-  pg_user { 'rails':
-    ensure  => present,
-    require => Class['postgresql::server']
+  exec { 'utf8 postgres':
+    command => 'pg_dropcluster --stop 9.1 main ; pg_createcluster --start --locale en_US.UTF-8 9.1 main',
+    unless  => 'sudo -u postgres psql -t -c "\l" | grep template1 | grep -q UTF',
+    require => Class['postgresql::server'],
+    path    => ['/bin', '/sbin', '/usr/bin', '/usr/sbin'],
   }
 
   pg_user { 'vagrant':
     ensure    => present,
     superuser => true,
-    require   => Class['postgresql::server']
+    createdb  => true,
+    require   => [
+      Class['postgresql::server'],
+      Exec['utf8 postgres']
+    ]
+  }
+
+  pg_user { 'rails':
+    password  => 'rails',
+    ensure    => present,
+    superuser => true,
+    createdb  => true,
+    require   => [
+      Class['postgresql::server'],
+      Exec['utf8 postgres']
+    ]
   }
 
   package { 'libpq-dev':
