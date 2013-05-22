@@ -20,6 +20,12 @@ class { 'apt_get_update':
   stage => preinstall
 }
 
+# --- Bash Prompt --------------------------------------------------------------
+
+file { "/etc/profile.d/prompt.sh":
+  content => "export PS1='takeout$ '"
+}
+
 # --- SQLite -------------------------------------------------------------------
 
 package { ['sqlite3', 'libsqlite3-dev']:
