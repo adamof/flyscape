@@ -1,6 +1,4 @@
-# vagrant-box - Rails Development Anywhere
-
-
+# vagrant-box - Boxed Rails development
 
 ## Introduction
 
