@@ -74,6 +74,8 @@ Once Vagrant has finished setting up the box, remote into it, install your proje
 	takeout$ rvm gemset create <name>
 	takeout$ rvm gemset use <name> default
 	takeout$ bundle install
+	takeout$ rake db:create
+	takeout$ rake db:migrate
 	takeout$ rails server
 
 Don't forget to add a JavaScript runtime to the gemfile: ``gem 'therubyracer'``
