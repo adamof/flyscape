@@ -26,12 +26,6 @@ file { "/etc/profile.d/prompt.sh":
   content => "export PS1='takeout$ '"
 }
 
-# --- SQLite -------------------------------------------------------------------
-
-package { ['sqlite3', 'libsqlite3-dev']:
-  ensure => installed;
-}
-
 # --- PostgreSQL ---------------------------------------------------------------
 
 class install_postgres {
@@ -78,9 +72,6 @@ class install_postgres {
 }
 class { 'install_postgres': }
 
-# --- Memcached ----------------------------------------------------------------
-
-class { 'memcached': }
 
 # --- Packages -----------------------------------------------------------------
 
