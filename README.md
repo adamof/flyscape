@@ -1,4 +1,4 @@
-# vagrant-box - Boxed Rails development
+# vagrant-box - boxed Rails development
 
 ## Introduction
 
