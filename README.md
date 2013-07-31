@@ -76,4 +76,6 @@ Once Vagrant has finished setting up the box, remote into it, install your proje
 	takeout$ bundle install
 	takeout$ rails server
 
+Don't forget to add a JavaScript runtime to the gemfile: ``gem 'therubyracer'``
+And you might want to change the database user in database.yml, by default ``vagrant`` and ``admin`` have been added as postgres users.
 You can now edit your project locally, and view it in your local web browser at http://localhost:3000.  Again, remember that the `.vagrant/` folder shouldn't go into source control.  
