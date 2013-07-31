@@ -70,7 +70,10 @@ Once Vagrant has finished setting up the box, remote into it, install your proje
 
 	$ vagrant ssh
 	takeout$ cd /vagrant
+	takeout$ rvm use default ruby-2.0.0
+	takeout$ rvm gemset create <name>
+	takeout$ rvm gemset use <name> default
 	takeout$ bundle install
 	takeout$ rails server
-	
+
 You can now edit your project locally, and view it in your local web browser at http://localhost:3000.  Again, remember that the `.vagrant/` folder shouldn't go into source control.  
