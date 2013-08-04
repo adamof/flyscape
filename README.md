@@ -30,5 +30,7 @@ local: cd flyscape
 local: vagrant up
 local: vagrant ssh
 vagrant: cd /vagrant
+vagrant: bundle install
+vagrant: rake db:create
 vagrant: rails server
 ``` 
