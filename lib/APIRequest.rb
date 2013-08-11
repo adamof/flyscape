@@ -21,11 +21,6 @@ class APIRequest
       url_string += '%s'% @inbounddt
     end
     @api_url += url_string
-    puts @api_url
-  end
-
-  def self.get_key()
-    return @@api_key
   end
 
   def request_json()
@@ -47,14 +42,13 @@ class APIRequest
     quotes = @json['Quotes']
     stations = Hash.new
     @json['Places'].each do |place|
-        puts place
         stations[place['PlaceId']] = place['IataCode']
     end
 
     carriers = @json['Carriers']
-    puts quotes
-    puts stations
-    puts carriers
+    # puts quotes
+    # puts stations
+    # puts carriers
     quotes.each do |quote|
       if quote.include? 'MinPrice'
         leg = quote['OutboundLeg']
@@ -70,6 +64,6 @@ class APIRequest
   
 end
 
-new_req = APIRequest.new('quotes', 'LHR', 'CDG', '2013-10')
+new_req = APIRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
 respo = new_req.return_tuples()
 puts respo
