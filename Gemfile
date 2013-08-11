@@ -37,4 +37,7 @@ end
 
 gem 'geocoder'
 
-gem 'awesome_print', group: :development
+group :development do
+  gem 'awesome_print'
+  gem 'seed_dump'
+end
