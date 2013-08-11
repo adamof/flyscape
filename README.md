@@ -32,6 +32,8 @@ local: vagrant ssh
 vagrant: cd /vagrant
 vagrant: bundle install
 vagrant: rake db:create
+vagrant: rake db:migrate
+vagrant: rake db:seed
 vagrant: rails server
 ```
 Now go to localhost:3000 on your local mashine and see the application working!
