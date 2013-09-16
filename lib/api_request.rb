@@ -39,17 +39,14 @@ class ApiRequest
 
   def return_tuples()
     @json = request_json() 
-    @price_dict = Hash.new
+    @price_dict = {}
     quotes = @json['Quotes']
-    stations = Hash.new
+    stations = {}
     @json['Places'].each do |place|
         stations[place['PlaceId']] = place['IataCode']
     end
 
     carriers = @json['Carriers']
-    # puts quotes
-    # puts stations
-    # puts carriers
     quotes.each do |quote|
       if quote.include? 'MinPrice'
         leg = quote['OutboundLeg']

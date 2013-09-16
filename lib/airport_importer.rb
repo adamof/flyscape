@@ -11,15 +11,21 @@ class AirportImporter
   end
 
   def parse_row(airport)
+    if City.find_by_name_and_country_iso(airport["municipality"], airport["iso_country"])
+      city = City.find_by_name_and_country_iso(airport["municipality"], airport["iso_country"])
+    else
+      if City.find_by_name(airport["municipality"])
+        city = City.find_by_name(airport["municipality"])
+      else
+        city = City.create!(name: airport["municipality"], country_iso: airport["iso_country"])
+      end
+    end
     Airport.create!(
       name: airport["name"],
       lat: airport["latitude_deg"],
       lng: airport["longitude_deg"],
       iata: airport["iata_code"],
-      city: City.where(
-        name: airport["municipality"],
-        country_iso: airport["iso_country"]
-      ).first_or_create!
+      city: city
     )
   end
 end
