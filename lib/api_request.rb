@@ -2,7 +2,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 
-class APIRequest 
+class ApiRequest
   def initialize(request_type, origin, destination, outbounddt=nil, inbounddt=nil)
     @request_type = (['quotes','dates', 'grid'].include? request_type) ? request_type : 'quotes'
     @api_key = 'edilw029476295195384957967295278'
@@ -16,9 +16,9 @@ class APIRequest
   end
 
   def construct_url()
-    url_string =  'UK/%s/%s/%s/%s/%s'%[@currency_id, @locale, @origin, @destination, @outbounddt]
+    url_string = "UK/#{@currency_id}/#{@locale}/#{@origin}/#{@destination}/#{@outbounddt}" 
     if @inbounddt != nil
-      url_string += '%s'% @inbounddt
+      url_string += @inbounddt.to_s
     end
     @api_url += url_string
   end
@@ -64,6 +64,6 @@ class APIRequest
   
 end
 
-new_req = APIRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
+new_req = ApiRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
 respo = new_req.return_tuples()
 puts respo
