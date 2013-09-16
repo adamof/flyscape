@@ -5,4 +5,8 @@ class City < ActiveRecord::Base
   def address
     "#{name}, #{country_iso}"
   end
+
+  # def airport_iata_codes
+    
+  # end
 end

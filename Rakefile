@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Vagrant::Application.load_tasks
+Flyscape::Application.load_tasks

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130811170900) do
+ActiveRecord::Schema.define(version: 20130916213040) do
 
   create_table "airports", force: true do |t|
     t.string  "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20130811170900) do
     t.string "country_iso"
     t.float  "lat"
     t.float  "lng"
+    t.string "code"
   end
 
 end
