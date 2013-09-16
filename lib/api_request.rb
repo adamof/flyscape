@@ -1,6 +1,7 @@
-require 'json'
-require 'net/http'
-require 'uri'
+# new_req = ApiRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
+# respo = new_req.return_tuples()
+
+# {"LGW-JFK-2013-12-01"=>345.0, "LHR-JFK-2013-12-01"=>726.0, "LGW-JFK-2013-12-02"=>249.0, "LHR-EWR-2013-12-02"=>721.0, "LGW-EWR-2013-12-03"=>322.0, "LHR-JFK-2013-12-03"=>334.0, "LHR-JFK-2013-12-29"=>385.0, "LHR-EWR-2013-12-29"=>726.0, "LGW-JFK-2013-12-30"=>370.0, "LHR-EWR-2013-12-30"=>718.0, "LHR-JFK-2013-12-31"=>389.0}
 
 class ApiRequest
   def initialize(request_type, origin, destination, outbounddt=nil, inbounddt=nil)
@@ -64,6 +65,3 @@ class ApiRequest
   
 end
 
-new_req = ApiRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
-respo = new_req.return_tuples()
-puts respo
