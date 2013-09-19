@@ -1,8 +1,9 @@
-require 'json'
-require 'net/http'
-require 'uri'
+# new_req = ApiRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
+# respo = new_req.return_tuples()
 
-class APIRequest 
+# {"LGW-JFK-2013-12-01"=>345.0, "LHR-JFK-2013-12-01"=>726.0, "LGW-JFK-2013-12-02"=>249.0, "LHR-EWR-2013-12-02"=>721.0, "LGW-EWR-2013-12-03"=>322.0, "LHR-JFK-2013-12-03"=>334.0, "LHR-JFK-2013-12-29"=>385.0, "LHR-EWR-2013-12-29"=>726.0, "LGW-JFK-2013-12-30"=>370.0, "LHR-EWR-2013-12-30"=>718.0, "LHR-JFK-2013-12-31"=>389.0}
+
+class ApiRequest
   def initialize(request_type, origin, destination, outbounddt=nil, inbounddt=nil)
     @request_type = (['quotes','dates', 'grid'].include? request_type) ? request_type : 'quotes'
     @api_key = 'edilw029476295195384957967295278'
@@ -16,9 +17,9 @@ class APIRequest
   end
 
   def construct_url()
-    url_string =  'UK/%s/%s/%s/%s/%s'%[@currency_id, @locale, @origin, @destination, @outbounddt]
+    url_string = "UK/#{@currency_id}/#{@locale}/#{@origin}/#{@destination}/#{@outbounddt}" 
     if @inbounddt != nil
-      url_string += '%s'% @inbounddt
+      url_string += @inbounddt.to_s
     end
     @api_url += url_string
   end
@@ -38,17 +39,14 @@ class APIRequest
 
   def return_tuples()
     @json = request_json() 
-    @price_dict = Hash.new
+    @price_dict = {}
     quotes = @json['Quotes']
-    stations = Hash.new
+    stations = {}
     @json['Places'].each do |place|
         stations[place['PlaceId']] = place['IataCode']
     end
 
     carriers = @json['Carriers']
-    # puts quotes
-    # puts stations
-    # puts carriers
     quotes.each do |quote|
       if quote.include? 'MinPrice'
         leg = quote['OutboundLeg']
@@ -64,6 +62,3 @@ class APIRequest
   
 end
 
-new_req = APIRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
-respo = new_req.return_tuples()
-puts respo

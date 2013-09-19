@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Vagrant::Application.config.secret_key_base = '8d03d31b159d941ae6f6b7bdbe084b744099976dd10eb5331c5400ca8d49d504804ab24469fd7228b9c9a908fce56ac94041028d8e6998d5c3bdac2c288edd9f'
+Flyscape::Application.config.secret_key_base = '8d03d31b159d941ae6f6b7bdbe084b744099976dd10eb5331c5400ca8d49d504804ab24469fd7228b9c9a908fce56ac94041028d8e6998d5c3bdac2c288edd9f'
