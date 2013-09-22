@@ -13,7 +13,7 @@ class ApiRequest
     @destination = destination
     @outbounddt = outbounddt
     @inbounddt = inbounddt
-    @api_url = 'http://partners.api.skyscanner.net/apiservices/browse%s/v1.0/'%request_type
+    @api_url = "http://partners.api.skyscanner.net/apiservices/browse#{request_type}/v1.0/"
   end
 
   def construct_url()
@@ -38,15 +38,18 @@ class ApiRequest
   end
 
   def return_tuples()
-    @json = request_json() 
-    @price_dict = {}
-    quotes = @json['Quotes']
+    flights = []
+
+    price_dict = {}
     stations = {}
-    @json['Places'].each do |place|
-        stations[place['PlaceId']] = place['IataCode']
+    json = request_json() 
+    quotes = json['Quotes']
+
+    json['Places'].each do |place|
+      stations[place['PlaceId']] = place['IataCode']
     end
 
-    carriers = @json['Carriers']
+    carriers = json['Carriers']
     quotes.each do |quote|
       if quote.include? 'MinPrice'
         leg = quote['OutboundLeg']
@@ -54,10 +57,18 @@ class ApiRequest
         destination = stations[leg['DestinationId']]
         dt = leg['DepartureDate'].to_s
         dt = dt[0..9]
-        @price_dict['%s-%s-%s' % [origin, destination, dt]] = quote['MinPrice'] 
+        flights << Flight.new(
+          from_city: leg['OriginId'],
+          from_airport: origin,
+          to_city: leg['DestinationId'],
+          to_airport: destination,
+          price: quote['MinPrice'],
+          date: leg['DepartureDate']
+        )
+        price_dict["#{origin}-#{destination}-#{dt}"] = quote['MinPrice'] 
       end
     end
-    return @price_dict
+    return price_dict, flights
   end
   
 end
