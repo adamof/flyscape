@@ -37,10 +37,10 @@ class ApiRequest
     return JSON.parse(res.body)
   end
 
-  def return_tuples()
+  def return_flights
     flights = []
 
-    price_dict = {}
+    # price_dict = {}
     stations = {}
     json = request_json() 
     quotes = json['Quotes']
@@ -53,22 +53,23 @@ class ApiRequest
     quotes.each do |quote|
       if quote.include? 'MinPrice'
         leg = quote['OutboundLeg']
-        origin = stations[leg['OriginId']]
-        destination = stations[leg['DestinationId']]
-        dt = leg['DepartureDate'].to_s
-        dt = dt[0..9]
+        origin_airport = stations[leg['OriginId']]
+        destination_airport = stations[leg['DestinationId']]
+        # dt = leg['DepartureDate'].to_s
+        # dt = dt[0..9]
         flights << Flight.new(
-          from_city: leg['OriginId'],
-          from_airport: origin,
-          to_city: leg['DestinationId'],
-          to_airport: destination,
+          from_city: @origin,
+          from_airport: origin_airport,
+          to_city: @destination,
+          to_airport: destination_airport,
           price: quote['MinPrice'],
-          date: leg['DepartureDate']
+          date: DateTime.parse(leg['DepartureDate'])
         )
-        price_dict["#{origin}-#{destination}-#{dt}"] = quote['MinPrice'] 
+        # price_dict["#{origin_airport}-#{destination_airport}-#{dt}"] = quote['MinPrice'] 
       end
     end
-    return price_dict, flights
+    # return price_dict
+    return flights
   end
   
 end

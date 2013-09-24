@@ -40,4 +40,6 @@ gem 'geocoder'
 group :development do
   gem 'awesome_print'
   gem 'seed_dump'
+  gem 'pry-rails'
+  gem 'pry'
 end
