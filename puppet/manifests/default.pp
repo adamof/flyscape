@@ -5,6 +5,8 @@ Exec {
   path => ['/usr/sbin', '/usr/bin', '/sbin', '/bin']
 }
 
+include redis
+
 # --- Preinstall Stage ---------------------------------------------------------
 
 stage { 'preinstall':
@@ -79,9 +81,9 @@ package { 'curl':
   ensure => installed
 }
 
-package { 'build-essential':
-  ensure => installed
-}
+# package { 'build-essential':
+#   ensure => installed
+# }
 
 package { 'git-core':
   ensure => installed

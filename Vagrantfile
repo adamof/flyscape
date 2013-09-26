@@ -7,5 +7,6 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :puppet,
     :manifests_path => 'puppet/manifests',
+    :manifest_file => 'default.pp',
     :module_path    => 'puppet/modules'
 end
