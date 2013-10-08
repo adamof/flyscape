@@ -1,9 +1,9 @@
-# new_req = ApiRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
+# new_req = RouteOptimiser::ApiRequest.new('quotes', 'LOND', 'NYCA', '2013-12')
 # respo = new_req.return_flights
 
 # {"LGW-JFK-2013-12-01"=>345.0, "LHR-JFK-2013-12-01"=>726.0, "LGW-JFK-2013-12-02"=>249.0, "LHR-EWR-2013-12-02"=>721.0, "LGW-EWR-2013-12-03"=>322.0, "LHR-JFK-2013-12-03"=>334.0, "LHR-JFK-2013-12-29"=>385.0, "LHR-EWR-2013-12-29"=>726.0, "LGW-JFK-2013-12-30"=>370.0, "LHR-EWR-2013-12-30"=>718.0, "LHR-JFK-2013-12-31"=>389.0}
 
-module  RouteOptimiser
+module RouteOptimiser
   class ApiRequest
     def initialize(request_type, origin, destination, outbounddt=nil, inbounddt=nil)
       @request_type = (['quotes','dates', 'grid'].include? request_type) ? request_type : 'quotes'
@@ -39,9 +39,10 @@ module  RouteOptimiser
     end
 
     def return_flights
-      flights = []
 
-      # price_dict = {}
+      results_hash = Hash.new { |h, key| h[key] = {} }
+      results_hash[:airports_with_flights] = Set.new
+
       stations = {}
       json = request_json 
       quotes = json['Quotes']
@@ -56,21 +57,23 @@ module  RouteOptimiser
           leg = quote['OutboundLeg']
           origin_airport = stations[leg['OriginId']]
           destination_airport = stations[leg['DestinationId']]
-          # dt = leg['DepartureDate'].to_s
-          # dt = dt[0..9]
-          flights << Flight.new(
+          hash_key = "#{origin_airport}-#{destination_airport}"
+          date = Date.parse(leg['DepartureDate'])
+
+          results_hash[:airports_with_flights].add(origin_airport).add(destination_airport)
+
+          results_hash[hash_key][date] = Flight.new(
             from_city: @origin,
             from_airport: origin_airport,
             to_city: @destination,
             to_airport: destination_airport,
             price: quote['MinPrice'],
-            date: DateTime.parse(leg['DepartureDate'])
+            date: date
           )
-          # price_dict["#{origin_airport}-#{destination_airport}-#{dt}"] = quote['MinPrice'] 
         end
       end
-      # return price_dict
-      return flights
+
+      return results_hash
     end
     
   end

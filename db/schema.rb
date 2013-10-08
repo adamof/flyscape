@@ -29,4 +29,6 @@ ActiveRecord::Schema.define(version: 20130916213040) do
     t.string "code"
   end
 
+  add_index "cities", ["lat", "lng"], name: "index_cities_on_lat_and_lng", using: :btree
+
 end

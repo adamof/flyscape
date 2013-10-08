@@ -39,7 +39,7 @@ gem 'geocoder'
 gem "redis-rails", "~> 4.0.0"
 
 group :development do
-  gem 'awesome_print'
+  # gem 'awesome_print'
   gem 'seed_dump'
   gem 'pry-rails'
   gem 'pry'

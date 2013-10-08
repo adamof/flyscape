@@ -1,0 +1,306 @@
+=> {[32m[1;32m"[0m[32mLGW-SOF[1;32m"[0m[32m[0m=>
+  {[1;34m[4mSun[0m, [1;34m01[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534bef8
+      @date=Sun, 01 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=47.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mMon[0m, [1;34m02[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534b700
+      @date=Mon, 02 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=44.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mWed[0m, [1;34m04[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534a670
+      @date=Wed, 04 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=46.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mThu[0m, [1;34m05[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005349e78
+      @date=Thu, 05 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=46.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mFri[0m, [1;34m06[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005349680
+      @date=Fri, 06 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=44.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mSun[0m, [1;34m08[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005348690
+      @date=Sun, 08 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=55.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mMon[0m, [1;34m09[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534fe40
+      @date=Mon, 09 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=53.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mTue[0m, [1;34m10[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534f648
+      @date=Tue, 10 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=64.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mWed[0m, [1;34m11[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534ee50
+      @date=Wed, 11 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=80.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mThu[0m, [1;34m12[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534e658
+      @date=Thu, 12 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=101.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mFri[0m, [1;34m13[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534de60
+      @date=Fri, 13 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=100.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mSat[0m, [1;34m14[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534d668
+      @date=Sat, 14 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=133.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mSun[0m, [1;34m15[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534ce70
+      @date=Sun, 15 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=129.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mMon[0m, [1;34m16[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534c678
+      @date=Mon, 16 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=124.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mFri[0m, [1;34m20[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x000000053555c0
+      @date=Fri, 20 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=198.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mMon[0m, [1;34m23[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000535ecd8
+      @date=Mon, 23 Dec 2013 00:00:00 +0000,
+      @from_airport="LGW",
+      @from_city="LOND",
+      @price=184.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m]},
+ [32m[1;32m"[0m[32mSTN-SOF[1;32m"[0m[32m[0m=>
+  {[1;34m[4mTue[0m, [1;34m03[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000534ae68
+      @date=Tue, 03 Dec 2013 00:00:00 +0000,
+      @from_airport="STN",
+      @from_city="LOND",
+      @price=32.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mSat[0m, [1;34m07[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005348e88
+      @date=Sat, 07 Dec 2013 00:00:00 +0000,
+      @from_airport="STN",
+      @from_city="LOND",
+      @price=42.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mTue[0m, [1;34m17[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005357578
+      @date=Tue, 17 Dec 2013 00:00:00 +0000,
+      @from_airport="STN",
+      @from_city="LOND",
+      @price=139.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mWed[0m, [1;34m25[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000535d518
+      @date=Wed, 25 Dec 2013 00:00:00 +0000,
+      @from_airport="STN",
+      @from_city="LOND",
+      @price=163.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m]},
+ [32m[1;32m"[0m[32mLHR-SOF[1;32m"[0m[32m[0m=>
+  {[1;34m[4mTue[0m, [1;34m17[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005357d70
+      @date=Tue, 17 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=123.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mWed[0m, [1;34m18[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005356d80
+      @date=Wed, 18 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=146.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m,
+     [32m[1;32m#<[0m[32mFlight:0x000000053565b0
+      @date=Wed, 18 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=154.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mThu[0m, [1;34m19[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005355db8
+      @date=Thu, 19 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=154.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mMon[0m, [1;34m23[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000535f4d0
+      @date=Mon, 23 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=154.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mTue[0m, [1;34m24[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000535e4e0
+      @date=Tue, 24 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=126.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m,
+     [32m[1;32m#<[0m[32mFlight:0x0000000535dd10
+      @date=Tue, 24 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=154.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mThu[0m, [1;34m26[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000535cd20
+      @date=Thu, 26 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=104.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mFri[0m, [1;34m27[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005363cd8
+      @date=Fri, 27 Dec 2013 00:00:00 +0000,
+      @from_airport="LHR",
+      @from_city="LOND",
+      @price=126.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m]},
+ [32m[1;32m"[0m[32mLTN-SOF[1;32m"[0m[32m[0m=>
+  {[1;34m[4mFri[0m, [1;34m20[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005354d28
+      @date=Fri, 20 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=211.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mSat[0m, [1;34m21[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005354530
+      @date=Sat, 21 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=200.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mSun[0m, [1;34m22[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000535fcc8
+      @date=Sun, 22 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=160.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mThu[0m, [1;34m26[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x0000000535c528
+      @date=Thu, 26 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=110.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mFri[0m, [1;34m27[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x000000053634e0
+      @date=Fri, 27 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=140.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mSat[0m, [1;34m28[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005362ce8
+      @date=Sat, 28 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=111.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mSun[0m, [1;34m29[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x000000053624f0
+      @date=Sun, 29 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=91.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mMon[0m, [1;34m30[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005361cf8
+      @date=Mon, 30 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=81.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m],
+   [1;34m[4mTue[0m, [1;34m31[0m [1;34m[4mDec[0m [1;34m2013[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m +[1;34m0000[0m=>
+    [[32m[1;32m#<[0m[32mFlight:0x00000005361500
+      @date=Tue, 31 Dec 2013 00:00:00 +0000,
+      @from_airport="LTN",
+      @from_city="LOND",
+      @price=61.0,
+      @to_airport="SOF",
+      @to_city="SOFI"[1;32m>[0m[32m[0m]}}[0m

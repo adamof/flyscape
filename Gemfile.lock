@@ -27,7 +27,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.12)
-    awesome_print (1.1.0)
     builder (3.1.4)
     coderay (1.0.9)
     coffee-rails (4.0.0)
@@ -145,7 +144,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
   coffee-rails (~> 4.0.0)
   debugger
   geocoder
