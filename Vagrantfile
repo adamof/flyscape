@@ -5,6 +5,15 @@ Vagrant::Config.run do |config|
 
   config.vm.forward_port 3000, 3000
 
+  config.vm.provision "shell",
+      inline: " sudo apt-get -y update
+                sudo apt-get -y install python-software-properties python g++ curl libssl-dev apache2-utils make;
+                sudo add-apt-repository ppa:chris-lea/node.js;
+                sudo apt-get -y update;
+                sudo apt-get -y install nodejs
+                npm install -g yo;
+                npm install -g generator-webapp"
+
   config.vm.provision :puppet,
     :manifests_path => 'puppet/manifests',
     :manifest_file => 'default.pp',
