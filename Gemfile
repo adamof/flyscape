@@ -9,6 +9,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Set up front end stuff
+gem 'sass', '3.3.0.alpha.149'
+gem 'compass', '0.12.2'
+gem 'rb-inotify', '~> 0.9'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

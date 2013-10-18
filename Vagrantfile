@@ -4,6 +4,7 @@ Vagrant::Config.run do |config|
   config.vm.host_name = 'vagrant-box'
 
   config.vm.forward_port 3000, 3000
+  config.vm.forward_port 8080, 8080
   config.vm.forward_port 35729, 35729
 
   config.vm.provision :puppet,
@@ -19,6 +20,5 @@ Vagrant::Config.run do |config|
                 sudo apt-get -y install nodejs
                 npm install -g yo;
                 npm install -g generator-webapp;
-                gem update --no-rdoc --no-ri --system;
-                gem install --no-rdoc --no-ri compass"
+                npm install -g grunt-contrib-sass"
 end

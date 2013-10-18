@@ -22,11 +22,11 @@ module.exports = function (grunt) {
         watch: {
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
+                tasks: ['sass', 'autoprefixer']
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-                tasks: ['copy:styles', 'autoprefixer']
+                tasks: ['copy:styles', 'copy:maps', 'autoprefixer']
             },
             livereload: {
                 options: {
@@ -107,7 +107,7 @@ module.exports = function (grunt) {
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
+                cssDir: '<%= yeoman.app %>/styles',
                 generatedImagesDir: '.tmp/images/generated',
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
@@ -264,6 +264,13 @@ module.exports = function (grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            maps: {
+                expand: true,
+                dot: true,
+                cwd: '<%= yeoman.app %>/styles',
+                dest: '.tmp/styles/',
+                src: '{,*/}*.map'
             }
         },
         modernizr: {
@@ -279,20 +286,36 @@ module.exports = function (grunt) {
         concurrent: {
             server: [
                 'compass',
-                'copy:styles'
+                'copy:styles',
+                'copy:maps'
             ],
             test: [
-                'copy:styles'
+                'copy:styles',
+                'copy:maps'
             ],
             dist: [
                 'compass',
                 'copy:styles',
+                'copy:maps',
                 'imagemin',
                 'svgmin',
                 'htmlmin'
             ]
+        },
+        sass: {
+            dist: {
+              options: {
+                sourcemap: true
+                // style: 'nested'
+              },
+              files: {
+                '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
+              }
+            }
         }
     });
+
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
@@ -301,6 +324,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            'sass',
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
