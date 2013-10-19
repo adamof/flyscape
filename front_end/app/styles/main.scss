@@ -1,0 +1,36 @@
+@import "vars";
+@import "layout";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  transition:.3s;
+}
+
+body {
+    background: $light;
+    color: $dark;
+    font-family: $sansSerif;
+    font-size: 42px;
+    -webkit-text-stroke: 0.5px;
+    // line-height: 24px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    padding: 0.2em 0;
+}
+
+// Grid-ish
+.half {
+    float: left;
+    width: 50%;
+}

@@ -1,0 +1,6 @@
+@mixin article_background($path){
+  background: url($path) no-repeat bottom center;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$path, sizingMethod='scale');
+  -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=$path, sizingMethod='scale');
+}

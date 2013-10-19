@@ -9,6 +9,8 @@
         <title>front_end</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
@@ -22,33 +24,56 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <header>
+            <h1>Flyscape</h1>
+            <h2>We plan. You have fun.</h2>
+        </header>
 
-        <div class="hero-unit">
-          <h1>Ya'll!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>Modernizr</li>
+        <nav class="center">
+            As easy as <a class="step1" href="#step1">one -</a> <a class="step2" href="#step2">two -</a> <a class="step3" href="#step3">three!</a>
+        </nav>
 
-          </ul>
+        <div class="landing-content">
+            <article class="step1" id="step1">
+                <div class="center">
+                    My trip will begin in <input class="normal-input" type="text">.
+                    <span class="tip">Perhaps you want to start <br>from your current location.</span>
+                </div>
+            </article>
+
+            <article class="step2" id="step2">
+                <div class="center">
+                    I will visit <input class="normal-input" type="text">.
+                    <span class="tip">Tell us where you want to travel <br> or pin the places on the map.</span>
+                </div>
+            </article>
+            <article class="step3" id="step3">
+                <div class="center">
+                    <div class="narrow_center">
+                        <span class="tip step3-tip">Tell us where you want to travel <br> or pin the places on the map.</span><span class="right-arrow"></span>
+                    </div>
+                    <div class="grid">
+                        <div class="half">
+                            I will travel <input class="calendar-input" type="text">.
+                        </div>
+                        <div class="half">
+                            I will leave after <input class="calendar-input" type="text"><br>
+                            and return by <input class="calendar-input" type="text">.
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
 
+        <footer>
+
+        </footer>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
