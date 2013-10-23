@@ -19,7 +19,10 @@ nav {
   position: relative;
   top: -49px;
   height: 0px;
-  z-index: 1; }
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  height: 270px; }
   nav .step1 {
     color: #fd7400; }
   nav .step2 {
@@ -33,6 +36,7 @@ nav {
   height: 49px; }
 
 .landing-content article {
+  margin-top: 270px;
   height: 579px;
   font-size: 1.1em;
   font-weight: 200; }
@@ -105,7 +109,7 @@ nav {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
-  transition: .3s;
+  transition: .4s;
   border-top: 0 solid;
   border-right: 0 solid;
   background-position: 0 0;
@@ -184,6 +188,10 @@ nav {
 
 .adjacent-month {
   color: #918c81; }
+
+#map-canvas {
+  width: 66%;
+  height: 402px; }
 
 * {
   box-sizing: border-box;

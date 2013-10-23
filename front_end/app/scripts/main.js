@@ -1,12 +1,13 @@
-"use strict";
+// "use strict";
 jQuery(document).ready(function ($) {
   gmaps_initialize();
+
   var links = $('nav').find('a'),
   slide = $('article'),
-  currentStep = 0,
+  currentStep = 1,
   scrolling = false,
   // Constants
-  navHeight = 40,
+  navHeight = 270,
   articleHeight = 579;
   // Set up step height
   $('article').css({'margin-bottom': window.innerHeight - navHeight - articleHeight});
@@ -15,11 +16,11 @@ jQuery(document).ready(function ($) {
   };
 
   // Navigation
-  $('header').waypoint(function (direction) {
-    $('nav').toggleClass('fixedPosition');
-  }, {
-    offset: function() { return -$(this).height(); }
-  });
+  // $('header').waypoint(function (direction) {
+  //   $('nav').toggleClass('fixedPosition');
+  // }, {
+  //     offset: function() { return -$(this).height(); }
+  // });
 
   slide.waypoint(function (direction) {
     var step = $(this).attr('data-step');
@@ -27,46 +28,54 @@ jQuery(document).ready(function ($) {
       $('nav a[data-step="' + step + '"]').addClass('active').prev().removeClass('active');
     }
     else {
-      $('nav a[data-step="' + step + '"]').addClass('active').next().removeClass('active');
-      if (currentStep == 1){currentStep = 0}
+        $('nav a[data-step="' + step + '"]').addClass('active').next().removeClass('active');
+        // if (currentStep == 1){currentStep = 0}
     }
   });
 
   function scrollTo(step) {
-    $('html,body').animate({
-      scrollTop: $('article[data-step="' + step + '"]').offset().top - navHeight
-    }, 1000, function(){scrolling = false;});
-  }
+    if (step == 4) {
+      $('html,body').animate({
+        scrollTop: $('footer').offset().top
+      }, 500, function(){scrolling = false;});
+      $('.submit').css({'margin-top': window.innerHeight/2, 'margin-bottom': window.innerHeight/2});
+    } else {
+      $('html,body').animate({
+        scrollTop: $('article[data-step="' + step + '"]').offset().top - navHeight
+      }, 1000, function(){scrolling = false;});
+      $('.submit').css({'margin-top': 0, 'margin-botom': 0});
+    }
+  };
 
   links.click(function (e) {
-    currentStep = parseInt($(this).attr('data-step'));
-    scrollTo( currentStep );
-    return false;
+      currentStep = parseInt($(this).attr('data-step'));
+      scrollTo( currentStep );
+      return false;
   });
 
   $(window).mousewheel(function(event, delta, deltaX, deltaY) {
-      if (deltaY == -1 && !scrolling){
-        if (currentStep < 3){
-          scrolling = true;
-          currentStep += 1;
-          scrollTo(currentStep);
-        } else {
-          scrolling = false;
-        }
-      } else if (deltaY == 1 && !scrolling) {
-        if (currentStep > 1){
-          scrolling = true;
-          currentStep -= 1;
-          scrollTo(currentStep);
-        } else {
-          scrolling = false;
-        }
-      }
+    if (deltaY == -1 && !scrolling){
+      if (currentStep < 4){
+        scrolling = true;
+        currentStep += 1;
+        scrollTo(currentStep);
+    } else {
+        scrolling = false;
+    }
+  } else if (deltaY == 1 && !scrolling) {
+      if (currentStep > 1){
+        scrolling = true;
+        currentStep -= 1;
+        scrollTo(currentStep);
+    } else {
+        scrolling = false;
+    }
+  }
   });
 
-  // Step 1
-  $('input[name=start-location]').click(function(event) {
-    getLocation();
+    // Step 1
+    $('input[name=start-location]').click(function(event) {
+      getLocation();
   });
 
   function setStart (position) {
@@ -91,15 +100,15 @@ jQuery(document).ready(function ($) {
         }
       }
     });
-    result.calendarContainer.addClass("calendar-hidden");
-    return result
-  }
+      result.calendarContainer.addClass("calendar-hidden");
+      return result
+  };
   function toggle_calendar(calendar, name, date) {
-    calendar.calendarContainer.addClass("calendar-hidden");
-    if (name == '.clndr-holder-start'){
-      $('input[name=clndr-start]').val(date);
+      calendar.calendarContainer.addClass("calendar-hidden");
+      if (name == '.clndr-holder-start'){
+        $('input[name=clndr-start]').val(date);
     } else if (name == '.clndr-holder-end'){
-      $('input[name=clndr-end]').val(date);
+        $('input[name=clndr-end]').val(date);
     }
   }
 
@@ -107,10 +116,10 @@ jQuery(document).ready(function ($) {
   var calendar_end = create_calendar('.clndr-holder-end');
 
   $('input[name=clndr-start]').click(function(event) {
-    calendar_start.calendarContainer.removeClass("calendar-hidden");
+      calendar_start.calendarContainer.removeClass("calendar-hidden");
   });
   $('input[name=clndr-end]').click(function(event) {
-    calendar_end.calendarContainer.removeClass("calendar-hidden");
+      calendar_end.calendarContainer.removeClass("calendar-hidden");
   });
 
 
