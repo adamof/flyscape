@@ -12,7 +12,7 @@
 header {
   width: 324px;
   height: 180px;
-  margin: 0 auto;
+  margin: 0 auto 49px;
   background: url(../images/logo.png) no-repeat center;
   /* Hide the text. */
   text-indent: 100%;
@@ -23,15 +23,28 @@ header {
 // Navigation
 nav {
   font-weight: 200;
+  // background: $light;
+  width: 100%;
+  // Fixed position transition hack
+  position: relative;
+  top: -49px;
+  height: 0px;
+  z-index: 1;
 
   .step1{ color: $step1Color }
   .step2{ color: $step2Color }
   .step3{ color: $step3Color }
 }
+  .fixedPosition {
+      position: fixed;
+      top: 0;
+      height: 49px
+  }
 
 .landing-content {
+
   article {
-    height: 579px;
+    height: $stepHeight;
     font-size: 1.1em;
     font-weight: 200;
   }
@@ -86,7 +99,7 @@ nav {
     border-bottom: 2px solid $dark;
     background: none;
 
-    font-size: 0.9em;
+    font-size: 0.7em;
     font-family: $handwritten;
     letter-spacing: 5px;
     text-align: center;
@@ -96,10 +109,36 @@ nav {
     }
   }
   .calendar-input {
-    width: 4em;
+    width: 5.4em;
   }
-  .normal-input{
-    width: 6em;
+  .normal-input {
+    width: 8em;
   }
 
+}
+
+.submit {
+  width: 460px;
+  height: 99px;
+  margin: 60px auto 80px auto;
+  background-color: $dark;
+  background-image: url(../images/submit.jpg);
+  /* Hide the text. */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: .3s;
+
+  border-top: 0 solid;
+  border-right: 0 solid;
+  background-position: 0 0;
+
+  cursor: pointer;
+
+  &:hover {
+    border-top: 4px solid $light2;
+    border-right: 4px solid $light1;
+    background-position: -4px 0;
+    box-shadow: inset 4px -4px 5px #111;
+  }
 }

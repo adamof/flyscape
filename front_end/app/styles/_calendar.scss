@@ -1,0 +1,81 @@
+// Variables
+$day_width: 56px;
+$calendar_width: $day_width * 7;
+// Styles
+.clndr-holder-start{
+  overflow: hidden;
+  position: relative;
+  top: -55px;
+}
+.clndr-holder-end{
+  overflow: hidden;
+  position: relative;
+  top: 4px;
+}
+  .clndr-holder-start *, .clndr-holder-end * {
+    box-sizing: border-box;
+    transition: .3s;
+  }
+  .clndr {
+    position: relative;
+    width: $calendar_width;
+    height: 317px;
+    font-size: 0.6em;
+    background-color: $dark;
+    color: $light1;
+    cursor: default;
+  }
+    .calendar-hidden {
+      top: -317px;
+      height: 0px;
+    }
+
+    .clndr-controls {
+      margin-bottom: 12px;
+      div {
+        display: inline-block;
+      }
+    }
+      .clndr-month {
+        text-align: center;
+        width: $calendar_width - 2*$day_width - 24;
+      }
+      .clndr-previous-button, .clndr-next-button{
+        width: $day_width;
+        padding: 0 12px;
+        margin: 8px 0 8px 3px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $step3Color;
+        }
+      }
+      .clndr-previous-button {
+        text-align: right;
+      }
+      .clndr-next-button {
+        text-align: left;
+      }
+
+    .header-day, .day {
+      text-align: center;
+      display: inline-block;
+      width: $day_width;
+      height: 42px;
+    }
+
+    .header-day{
+      font-weight: 400;
+      margin-bottom: 4px;
+      border-bottom: 9px solid $step3Color;
+    }
+    .day {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $step3Color;
+      }
+    }
+      .adjacent-month {
+        color: $light2;
+      }

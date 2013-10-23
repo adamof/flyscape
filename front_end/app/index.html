@@ -29,25 +29,26 @@
             <h2>We plan. You have fun.</h2>
         </header>
 
-        <nav class="center">
-            As easy as <a class="step1" href="#step1">one -</a> <a class="step2" href="#step2">two -</a> <a class="step3" href="#step3">three!</a>
+        <nav>
+            <div class="center">As easy as <a class="step1" data-step="1" href="#step1">one -</a> <a class="step2" data-step="2" href="#step2">two -</a> <a class="step3" data-step="3" href="#step3">three!</a></div>
         </nav>
 
         <div class="landing-content">
-            <article class="step1" id="step1">
+            <article class="step1" id="step1" data-step="1" data-stellar-background-ratio="0.5">
                 <div class="center">
-                    My trip will begin in <input class="normal-input" type="text">.
+                    My trip will begin in <input class="normal-input" type="text" name="start-location">.
                     <span class="tip">Perhaps you want to start <br>from your current location.</span>
                 </div>
             </article>
 
-            <article class="step2" id="step2">
+            <article class="step2" id="step2" data-step="2" data-stellar-background-ratio="0.5">
                 <div class="center">
                     I will visit <input class="normal-input" type="text">.
                     <span class="tip">Tell us where you want to travel <br> or pin the places on the map.</span>
+                    <div id="map-canvas"></div>
                 </div>
             </article>
-            <article class="step3" id="step3">
+            <article class="step3" id="step3" data-step="3" data-stellar-background-ratio="0.5">
                 <div class="center">
                     <div class="narrow_center">
                         <span class="tip step3-tip">Tell us where you want to travel <br> or pin the places on the map.</span><span class="right-arrow"></span>
@@ -57,26 +58,68 @@
                             I will travel <input class="calendar-input" type="text">.
                         </div>
                         <div class="half">
-                            I will leave after <input class="calendar-input" type="text"><br>
-                            and return by <input class="calendar-input" type="text">.
+                            I will leave after <input class="calendar-input" type="text" name="clndr-start"><br>
+                            and return by <input class="calendar-input" type="text" name="clndr-end">.
+                            <div class="clndr-holder-start"></div>
+                            <div class="clndr-holder-end"></div>
                         </div>
                     </div>
                 </div>
             </article>
         </div>
 
+        <div class="submit">Plan my Flyscape!</div>
+
         <footer>
 
         </footer>
 
+        <!-- UnderscoreJS Clndr template -->
+        <script type="text/html" id='clndr-template'>
+            <div class="clndr-controls">
+              <div class="clndr-previous-button">&lsaquo;</div>
+              <div class="clndr-month"><%= month %></div>
+              <div class="clndr-next-button">&rsaquo;</div>
+            </div>
+            <div class="clndr-grid">
+              <div class="days-of-the-week">
+                <% _.each(daysOfTheWeek, function(day) { %><div class="header-day"><%= day %></div><% }); %>
+                <div class="days">
+                  <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
+                </div>
+              </div>
+            </div>
+        </script>
+        <!-- end of template -->
+
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <!-- endbower -->
+        <!-- bower:js -->
+        <script src="bower_components/underscore/underscore.js"></script>
+        <!-- endbower -->
+        <!-- bower:js -->
+        <script src="bower_components/momentjs/moment.js"></script>
+        <!-- endbower -->
+        <!-- bower:js -->
+        <script src="bower_components/clndr/clndr.js"></script>
+        <!-- endbower -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery-waypoints/waypoints.js"></script>
+        <!-- endbower -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+        <!-- endbower -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/map.js"></script>
         <!-- endbuild -->
 </body>
 </html>
