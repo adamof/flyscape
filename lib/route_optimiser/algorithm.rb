@@ -18,7 +18,7 @@ module  RouteOptimiser
       @city_to_airports = {}
       @airport_to_city = {}
 
-      cities.each do |city| 
+      cities.each do |city|
         @city_to_airports[city] = City.find_by_code(city).airports.map do |airport|
           next unless flights[:airports_with_flights].include? airport.iata
           @airport_to_city[airport] = city
@@ -49,27 +49,62 @@ module  RouteOptimiser
       results.delete_if { |key, value| value.count < @cities.count }
     end
 
-    def optimize_flights(start_date = @start_date, end_date = @end_date, visited = [@source_city], current_city = @source_city, target_cities = (@cities - [@source_city]))
-      return if visited.count > @cities.count
+    def optimize_flights(start_date = @start_date, end_date = @end_date, visited = Set.new([@source_city]), current_city = @source_city, target_cities = (@cities - [@source_city]))
+      if current_city  == target_cities.first
+        puts "TOP current_city: #{current_city}"
+        return
+      end
+      # possible have to do it for all the cities in the route
       end_date = end_date - (target_cities.count*@min_stay).days if current_city == @source_city # do this only for the initial city
+      puts "visited: #{visited.to_a}"
+      puts "visited count: #{visited.count}"
+      puts "start_date: #{start_date}, end_date: #{end_date}, current_city: #{current_city}
+            , target_cities: #{target_cities}"
+      cheapest_flights = []
+
       (start_date..end_date).each do |current_date|
         @current_date = current_date if current_city == @source_city
         current_airports = @city_to_airports[current_city]
 
-        cheapest_flight = get_cheapest_flight(current_airports, target_cities, current_date)
+        flight = get_cheapest_flight(current_airports, target_cities, current_date)
+        puts "current_date: #{current_date}, flight: #{flight}, current_city: #{current_city}, target_cities: #{target_cities}"
+        cheapest_flights << flight if flight
+        #puts "cheapest_flights: #{cheapest_flights}"
 
-        next unless cheapest_flight
+        next if (current_city != @source_city) || flight.nil?
 
-        results[@current_date] << cheapest_flight
-        destination_city = cheapest_flight.to_city
-        visited << destination_city
-        current_max_stay = [cheapest_flight.date + @max_stay.days, @end_date].min
+        results[@current_date] << flight
+        #puts "results: #{results}"
+        destination_city = flight.to_city
+        visited.add destination_city
+        current_max_stay = [flight.date + @max_stay.days, @end_date].min
 
         if visited.count == @cities.count
-          optimize_flights(cheapest_flight.date + @min_stay.days, current_max_stay, visited, destination_city, [@source_city])
+          optimize_flights(flight.date + @min_stay.days, current_max_stay, visited.clone, destination_city, [@source_city])
         else
-          optimize_flights(cheapest_flight.date + @min_stay.days, current_max_stay, visited, destination_city, target_cities - [destination_city])
+          optimize_flights(flight.date + @min_stay.days, current_max_stay, visited.clone, destination_city, target_cities - [destination_city])
         end
+      end
+
+
+      if current_city == @source_city || cheapest_flights.empty?
+        puts "current_city: #{current_city}"
+        return
+      end
+
+      cheapest_flight = cheapest_flights.min{ |x, y| x.price <=> y.price }
+      puts "chosen cheapest_flight: #{cheapest_flight}"
+
+      results[@current_date] << cheapest_flight
+      #puts "results: #{results}"
+      destination_city = cheapest_flight.to_city
+      visited.add destination_city
+      current_max_stay = [cheapest_flight.date + @max_stay.days, @end_date].min
+
+      if visited.count == @cities.count
+        optimize_flights(cheapest_flight.date + @min_stay.days, current_max_stay, visited.clone, destination_city, [@source_city])
+      else
+        optimize_flights(cheapest_flight.date + @min_stay.days, current_max_stay, visited.clone, destination_city, target_cities - [destination_city])
       end
 
     end

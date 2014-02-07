@@ -18,7 +18,7 @@ module RouteOptimiser
     end
 
     def construct_url
-      url_string = "UK/#{@currency_id}/#{@locale}/#{@origin}/#{@destination}/#{@outbounddt}" 
+      url_string = "UK/#{@currency_id}/#{@locale}/#{@origin}/#{@destination}/#{@outbounddt}"
       if @inbounddt != nil
         url_string += @inbounddt.to_s
       end
@@ -44,7 +44,7 @@ module RouteOptimiser
       results_hash[:airports_with_flights] = Set.new
 
       stations = {}
-      json = request_json 
+      json = request_json
       quotes = json['Quotes']
 
       json['Places'].each do |place|
@@ -75,6 +75,6 @@ module RouteOptimiser
 
       return results_hash
     end
-    
+
   end
 end
