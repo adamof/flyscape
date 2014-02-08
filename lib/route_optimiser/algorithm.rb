@@ -51,30 +51,35 @@ module  RouteOptimiser
 
     def optimize_flights(start_date = @start_date, end_date = @end_date, visited = Set.new([@source_city]), current_city = @source_city, target_cities = (@cities - [@source_city]))
       if current_city  == target_cities.first
-        puts "TOP current_city: #{current_city}"
+        # puts "TOP current_city: #{current_city}"
         return
       end
       # possible have to do it for all the cities in the route
-      end_date = end_date - (target_cities.count*@min_stay).days if current_city == @source_city # do this only for the initial city
-      puts "visited: #{visited.to_a}"
-      puts "visited count: #{visited.count}"
-      puts "start_date: #{start_date}, end_date: #{end_date}, current_city: #{current_city}
+      copy_end_date = end_date - (target_cities.count*@min_stay).days if current_city == @source_city # do this only for the initial city
+      # puts "visited: #{visited.to_a}"
+      # puts "visited count: #{visited.count}"
+      # puts "start_date: #{start_date}, copy_end_date: #{copy_end_date}, current_city: #{current_city}
             , target_cities: #{target_cities}"
       cheapest_flights = []
 
-      (start_date..end_date).each do |current_date|
-        @current_date = current_date if current_city == @source_city
+      binding.pry
+      (start_date..copy_end_date).each do |current_date|
+        if current_city == @source_city
+          @current_date = current_date
+          visited = Set.new([@source_city])
+        end
         current_airports = @city_to_airports[current_city]
 
         flight = get_cheapest_flight(current_airports, target_cities, current_date)
-        puts "current_date: #{current_date}, flight: #{flight}, current_city: #{current_city}, target_cities: #{target_cities}"
+        # puts "visited: #{visited.to_a}"
+        # puts "current_date: #{current_date}, flight: #{flight}, current_city: #{current_city}, target_cities: #{target_cities}"
         cheapest_flights << flight if flight
-        #puts "cheapest_flights: #{cheapest_flights}"
+        # puts "cheapest_flights: #{cheapest_flights}"
 
         next if (current_city != @source_city) || flight.nil?
 
         results[@current_date] << flight
-        #puts "results: #{results}"
+        # puts "results: #{results}"
         destination_city = flight.to_city
         visited.add destination_city
         current_max_stay = [flight.date + @max_stay.days, @end_date].min
@@ -88,15 +93,15 @@ module  RouteOptimiser
 
 
       if current_city == @source_city || cheapest_flights.empty?
-        puts "current_city: #{current_city}"
+        # puts "current_city: #{current_city}"
         return
       end
 
       cheapest_flight = cheapest_flights.min{ |x, y| x.price <=> y.price }
-      puts "chosen cheapest_flight: #{cheapest_flight}"
+      # puts "chosen cheapest_flight: #{cheapest_flight}"
 
       results[@current_date] << cheapest_flight
-      #puts "results: #{results}"
+      # puts "results: #{results}"
       destination_city = cheapest_flight.to_city
       visited.add destination_city
       current_max_stay = [cheapest_flight.date + @max_stay.days, @end_date].min

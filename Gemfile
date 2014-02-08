@@ -43,4 +43,6 @@ group :development do
   gem 'seed_dump'
   gem 'pry-rails'
   gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-nav'
 end
