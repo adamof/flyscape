@@ -1,0 +1,84 @@
+@import "vars";
+@import "mixins";
+
+$itemWidth: 200px;
+
+.results-content {
+    font-size: 24px;
+    font-weight: 200;
+
+    .journey {
+        margin-bottom: 12px;
+        border: 1px solid #d3d3d3;
+        border-radius: 2px;
+        background-color: $white;
+    }
+        .flights {
+            float: left;
+            width: $itemWidth + 20;
+        }
+
+            .flight {
+                border-top: 1px solid #d3d3d3;
+                background-color: #eaeaea;
+
+                width: $itemWidth;
+                padding: 4px 12px;
+
+                text-align: center;
+
+                cursor: pointer;
+
+                &:first-child {
+                    border-top: none;
+                }
+
+                & span {
+                    display: inline-block;
+                    width: 52px;
+                }
+
+                &.active {
+                    background-color: $white;
+                }
+            }
+                .info-txt {
+                    font-size: 0.75em;
+                    color: $darkColor;
+                }
+
+        .description {
+            float: left;
+            width: $baseWidth - (2 * $itemWidth + 22);
+            height: 100%;
+
+            & .info{
+                float: left;
+                width: 65%;
+                height: 100%;
+                padding-top: 12px;
+                // margin: 8px 0 0 16px;
+            }
+
+            & .logo {
+                float: right;
+                width: 34%;
+                height: 100%;
+            }
+        }
+
+        .price {
+            float: right;
+            width: $itemWidth;
+
+
+            height: 100%;
+            text-align: center;
+
+            border-left: 1px solid #d3d3d3;
+            background-color: #eaeaea;
+
+            font-size: 32px;
+            color: $darkColor;
+        }
+}

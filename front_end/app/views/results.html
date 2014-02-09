@@ -1,0 +1,33 @@
+<header>
+    <h1>Flyscape</h1>
+    <h2>We plan. You have fun.</h2>
+</header>
+
+<div class="results-content center">
+  <div class="journey" ng-repeat="journey in results" style="height: {{journeyHeight($index)}}px">
+    <div class="flights">
+        <div class="flight" ng-repeat="flight in journey.flights" ng-mouseover="showInfo($parent.$index, $index)" ng-class="{active: isActive($parent.$index, $index)}">
+            <span>{{flight.from}}</span>
+            <span><img src="images/plane.svg" alt="Airplane icon" width="22" height="22"></span>
+            <!-- TODO: attribute - http://thenounproject.com/term/airplane/20248/ -->
+            <span>{{flight.to}}</span>
+        </div>
+    </div>
+    <div class="description">
+        <div class="info">
+            <span class="info-txt">From</span> {{ journey.activeFlight.from_full }} <br>
+            <span class="info-txt">To</span> {{ journey.activeFlight.to_full }} <br>
+            <span class="info-txt">At</span> {{ dateToString(journey.activeFlight.time) }} <br>
+            <span class="info-txt">Price:</span> {{ journey.activeFlight.currency }} {{ journey.activeFlight.price }}
+        </div>
+        <div class="logo">
+            <img src="{{journey.activeFlight.logo}}" alt="{journey.activeFlight.company}" width="180" style="padding-top: {{imgPadding($index)}}">
+        </div>
+        <div class="cf"></div>
+    </div>
+    <div class="price" style="padding-top: {{pricePadding($index)}}">
+        {{ journey.currency.main }} {{ $parent.totalPrice($index) }}
+    </div>
+    <div class="cf"></div>
+  </div>
+</div>
