@@ -297,7 +297,7 @@ module.exports = function (grunt) {
                 'compass',
                 'copy:styles',
                 'copy:maps',
-                'imagemin',
+                // 'imagemin',
                 'svgmin',
                 'htmlmin'
             ]
@@ -305,8 +305,8 @@ module.exports = function (grunt) {
         sass: {
             dist: {
               options: {
-                sourcemap: true
-                // style: 'nested'
+                sourcemap: true,
+                quiet: true
               },
               files: {
                 '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
@@ -315,7 +315,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    // grunt.loadNpmTasks('grunt-contrib-sass');
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {

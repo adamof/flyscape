@@ -3,9 +3,17 @@
 @import "calendar";
 @import "map";
 
+// Page-specific
+@import "landing";
+@import "results";
+
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+html,body {
+    height:100%;
 }
 
 body {
@@ -30,8 +38,17 @@ a {
     padding: 0.2em 0;
 }
 
-// Grid-ish
-.half {
-    float: left;
-    width: 50%;
+
+
+// Clearfix
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
 }
